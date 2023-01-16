@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="style.css" rel="stylesheet"/>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <main>
+      <form novalidate>
+        <h2>Form Validation</h2>
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input class="noinvalid" name="email" type="email" id="email" placeholder="example@gmail.com" required/>
+          <div id="emailError" class="error"></div>
+        </div>
+        <div class="form-group">
+          <label for="country">Country *</label>
+          <select class="noinvalid" id="country" name="country" required>
+            <option value="" selected disabled>Select country</option>
+            <option value="Australia">Australia</option>
+            <option value="Canada">Cananda</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+          </select>
+          <div id="countryError" class="error"></div>
+        </div>
+        <div class="form-group">
+          <label for="zip-code">Zip-code *</label>
+          <input class="noinvalid" name="zip" type="text" id="zip" placeholder="52225"
+            pattern="(^\d{5}$)|(^\d{9}$)|(^\d{5}-\d{4}$)" required />
+          <div id="zipError" class="error"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input class="noinvalid" name="password" type="password" id="password" placeholder="Password" required minlength="8"
+                maxlength="255" />
+            <div id="passwordError" class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="password-confirm">Password Confirmation *</label>
+            <input class="noinvalid" name="password-confirm" type="password" id="password-confirm" placeholder="Password" required
+                minlength="8" maxlength="255" />
+            <div id="passwordConfirmationError" class="error"></div>
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
